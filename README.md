@@ -18,7 +18,7 @@ cd jruby__dir_test
 ```
 
 
-## 3.0.6
+## 3.0.6 (OK)
 
 build and execute
 
@@ -43,7 +43,7 @@ in liquid.rb use `File.dirname(__FILE__)`
 Dir[File.dirname(__FILE__) + '/liquid/tags/*.rb'].each { |f| require f }
 ```
 
-## 4.0.0
+## 4.0.0 (NG)
 
 build and execute
 

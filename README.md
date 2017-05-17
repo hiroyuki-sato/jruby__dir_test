@@ -1,3 +1,11 @@
+## Usage
+
+
+./gradlew jrubyJar
+java -jar build/libs/self-executing-jar-jruby.jar
+
+
+## test (Please ignore)
 
 ./gradlew jrubyJar
 java -jar build/libs/self-executing-jar-jruby.jar

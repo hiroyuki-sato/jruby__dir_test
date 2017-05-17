@@ -24,6 +24,7 @@ module Liquid
   ArgumentSeparator           = ','.freeze
   FilterArgumentSeparator     = ':'.freeze
   VariableAttributeSeparator  = '.'.freeze
+  WhitespaceControl           = '-'.freeze
   TagStart                    = /\{\%/
   TagEnd                      = /\%\}/
   VariableSignature           = /\(?[\w\-\.\[\]]\)?/
@@ -34,7 +35,7 @@ module Liquid
   QuotedString                = /"[^"]*"|'[^']*'/
   QuotedFragment              = /#{QuotedString}|(?:[^\s,\|'"]|#{QuotedString})+/o
   TagAttributes               = /(\w+)\s*\:\s*(#{QuotedFragment})/o
-  AnyStartingTag              = /\{\{|\{\%/
+  AnyStartingTag              = /#{TagStart}|#{VariableStart}/o
   PartialTemplateParser       = /#{TagStart}.*?#{TagEnd}|#{VariableStart}.*?#{VariableIncompleteEnd}/om
   TemplateParser              = /(#{PartialTemplateParser}|#{AnyStartingTag})/om
   VariableParser              = /\[[^\]]+\]|#{VariableSegment}+\??/o
@@ -48,6 +49,8 @@ require 'liquid/lexer'
 require 'liquid/parser'
 require 'liquid/i18n'
 require 'liquid/drop'
+require 'liquid/tablerowloop_drop'
+require 'liquid/forloop_drop'
 require 'liquid/extensions'
 require 'liquid/errors'
 require 'liquid/interrupts'
@@ -57,26 +60,26 @@ require 'liquid/context'
 require 'liquid/parser_switching'
 require 'liquid/tag'
 require 'liquid/block'
+require 'liquid/block_body'
 require 'liquid/document'
 require 'liquid/variable'
 require 'liquid/variable_lookup'
 require 'liquid/range_lookup'
 require 'liquid/file_system'
+require 'liquid/resource_limits'
 require 'liquid/template'
 require 'liquid/standardfilters'
 require 'liquid/condition'
-require 'liquid/module_ex'
 require 'liquid/utils'
-require 'liquid/token'
-
-p "__FILE__: #{__FILE__}"
-p "File.dirname(__FILE__): #{File.dirname(__FILE__)}"
-p "File.expand_path(File.dirname(__FILE__): #{File.expand_path(File.dirname(__FILE__))}"
-p "__dir__: #{__dir__}"
+require 'liquid/tokenizer'
+require 'liquid/parse_context'
 
 # Load all the tags of the standard library
 #
-Dir[File.dirname(__FILE__) + '/liquid/tags/*.rb'].each { |f| require f }
 
-require 'liquid/profiler'
-require 'liquid/profiler/hooks'
+p "                               __FILE__: #{__FILE__}"
+p "                 File.dirname(__FILE__): #{File.dirname(__FILE__)}"
+p "File.expand_path(File.dirname(__FILE__): #{File.expand_path(File.dirname(__FILE__))}"
+p "                                __dir__: #{__dir__}"
+
+Dir["#{__dir__}/liquid/tags/*.rb"].each { |f| require f }

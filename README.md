@@ -40,6 +40,27 @@ Did you mean?  Continuation
          <main> at classpath:jar-bootstrap.rb:6
 ```
 
+## diff
+
+```diff
+diff --git a/build.gradle b/build.gradle
+index 4859630..89772fb 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -29,8 +29,8 @@ dependencies {
+      * dependencies our jrubyJar task will need, so the gem is properly
+      * included in the resulting .jar file
+      */
+-    jrubyJar "rubygems:liquid:3.0.6"
+-//    jrubyJar "rubygems:liquid:4.0.0"
++//    jrubyJar "rubygems:liquid:3.0.6"
++    jrubyJar "rubygems:liquid:4.0.0"
+ //    jrubyJar "rubygems:colorize:0.7.7+"
+     jrubyJar 'org.slf4j:slf4j-simple:1.7.12'
+ }
+```
+
+
 ## Usage
 
 

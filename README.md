@@ -95,19 +95,3 @@ index 4859630..89772fb 100644
 ```
 
 
-## Usage
-
-
-./gradlew jrubyJar
-java -jar build/libs/jruby__dir_test-jruby.jar
-
-## test (Please ignore)
-
-./gradlew jrubyJar
-java -jar build/libs/self-executing-jar-jruby.jar
-
-rm build/libs/self-executing-jar-jruby.jar
-cp liquid.rb ./build/dirinfo/jrubyJar/gems/liquid-3.0.6/lib/liquid.rb 
-./gradlew jrubyJar
-
-java -jar build/libs/self-executing-jar-jruby.jar

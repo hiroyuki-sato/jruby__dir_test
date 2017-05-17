@@ -24,9 +24,9 @@ build and execute
 
 ```
 ./gradlew clean
-git checkout liquid_3_0_6
+git checkout -b liquid_3_0_6 liquid_3_0_6
 ./gradlew jrubyJar
-java -jar build/libs/self-executing-jar-jruby.jar
+java -jar build/libs/jruby__dir_test-jruby.jar
 ```
 
 result
@@ -50,9 +50,9 @@ build and execute
 
 ```
 ./gradlew clean
-git checkout liquid_4_0_0
+git checkout -b liquid_4_0_0 liquid_4_0_0
 ./gradlew jrubyJar
-java -jar build/libs/self-executing-jar-jruby.jar
+java -jar build/libs/jruby__dir_test-jruby.jar
 ```
 
 result

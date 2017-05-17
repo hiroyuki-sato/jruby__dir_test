@@ -1,3 +1,15 @@
+
+## Ruby source
+
+```ruby
+puts JRUBY_VERSION
+puts RUBY_VERSION
+
+require 'liquid'
+require 'pp'
+pp Liquid::Continue
+```
+
 ## Prepare
 
 ```

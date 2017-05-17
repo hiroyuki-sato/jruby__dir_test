@@ -1,5 +1,5 @@
 
-## Ruby source
+## Ruby source (entrypoint.rb)
 
 ```ruby
 puts JRUBY_VERSION

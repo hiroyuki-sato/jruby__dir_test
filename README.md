@@ -20,12 +20,7 @@ cd jruby__dir_test
 
 ## 3.0.6
 
-in liquid.rb
-
-```
-Dir[File.dirname(__FILE__) + '/liquid/tags/*.rb'].each { |f| require f }
-```
-
+build and execute
 
 ```
 ./gradlew clean
@@ -34,21 +29,23 @@ git checkout liquid_3_0_6
 java -jar build/libs/self-executing-jar-jruby.jar
 ```
 
+result
+
 ```
 9.1.7.0
 2.3.1
 Liquid::Continue
 ```
 
+in liquid.rb use `File.dirname(__FILE__)`
+
+```ruby
+Dir[File.dirname(__FILE__) + '/liquid/tags/*.rb'].each { |f| require f }
+```
 
 ## 4.0.0
 
-in liquid.rb
-
-```
-Dir["#{__dir__}/liquid/tags/*.rb"].each { |f| require f }
-```
-
+build and execute
 
 ```
 ./gradlew clean
@@ -56,6 +53,8 @@ git checkout liquid_4_0_0
 ./gradlew jrubyJar
 java -jar build/libs/self-executing-jar-jruby.jar
 ```
+
+result
 
 ```
 9.1.7.0
@@ -65,6 +64,13 @@ Did you mean?  Continuation
   const_missing at org/jruby/RubyModule.java:3344
          <main> at classpath:jar-bootstrap.rb:6
 ```
+
+in liquid.rb
+
+```ruby
+Dir["#{__dir__}/liquid/tags/*.rb"].each { |f| require f }
+```
+
 
 ## diff
 

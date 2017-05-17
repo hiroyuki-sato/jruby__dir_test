@@ -37,11 +37,12 @@ result
 Liquid::Continue
 ```
 
-in liquid.rb use `File.dirname(__FILE__)`
+Liquid-3.0.6 [lib/liquid.rb](https://github.com/Shopify/liquid/blob/8d19fdde7f48347107632f91efb84526aa4972c4/lib/liquid.rb#L74)
 
 ```ruby
 Dir[File.dirname(__FILE__) + '/liquid/tags/*.rb'].each { |f| require f }
 ```
+
 
 ## 4.0.0 (NG)
 
@@ -67,10 +68,11 @@ Did you mean?  Continuation
 
 in liquid.rb
 
+Liquid-4.0.0 [lib/liquid.rb](https://github.com/Shopify/liquid/blob/ad00998ef8a6722065e1e17476ac26aa715b84ed/lib/liquid.rb#L79)
+
 ```ruby
 Dir["#{__dir__}/liquid/tags/*.rb"].each { |f| require f }
 ```
-
 
 ## diff
 

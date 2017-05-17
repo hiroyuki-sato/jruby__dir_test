@@ -20,6 +20,13 @@ cd jruby__dir_test
 
 ## 3.0.6
 
+in liquid.rb
+
+```
+Dir[File.dirname(__FILE__) + '/liquid/tags/*.rb'].each { |f| require f }
+```
+
+
 ```
 ./gradlew clean
 git checkout liquid_3_0_6
@@ -35,6 +42,13 @@ Liquid::Continue
 
 
 ## 4.0.0
+
+in liquid.rb
+
+```
+Dir["#{__dir__}/liquid/tags/*.rb"].each { |f| require f }
+```
+
 
 ```
 ./gradlew clean
